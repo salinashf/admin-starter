@@ -20,7 +20,7 @@
     ],
     "theme_color": "#3c8dbc",
     "background_color": "#ffffff",
-    "scope": "/admin-starter/",
-    "start_url": "/admin-starter/index.xhtml",
+    "scope": "/sic/",
+    "start_url": "/sic/index.xhtml",
     "display": "standalone"
 }

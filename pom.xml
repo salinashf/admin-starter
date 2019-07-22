@@ -3,11 +3,11 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.adminfaces</groupId>
-    <artifactId>admin-starter</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <groupId>com.gm.sic</groupId>
+    <artifactId>sic</artifactId>
+    <version>0.1</version>
     <packaging>war</packaging>
-    <name>admin-starter</name>
+    <name>SIC</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,7 +68,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>admin-starter</finalName>
+        <finalName>SIC</finalName>
     </build>
     <profiles>
         <profile>
