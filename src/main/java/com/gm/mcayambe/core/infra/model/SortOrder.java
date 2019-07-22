@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter.infra.model;
+package com.gm.mcayambe.core.infra.model;
 
 /**
  * Created by rmpestano on 10/31/14.

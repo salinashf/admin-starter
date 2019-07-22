@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter.infra.security;
+package com.gm.mcayambe.core.infra.security;
 
 import com.github.adminfaces.template.session.AdminSession;
 import org.omnifaces.util.Faces;
@@ -9,7 +9,7 @@ import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 
-import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+import static com.gm.mcayambe.core.util.Utils.addDetailMessage;
 import com.github.adminfaces.template.config.AdminConfig;
 import javax.inject.Inject;
 

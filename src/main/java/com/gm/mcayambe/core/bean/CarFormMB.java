@@ -2,10 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.adminfaces.starter.bean;
+package com.gm.mcayambe.core.bean;
 
-import com.github.adminfaces.starter.model.Car;
-import com.github.adminfaces.starter.service.CarService;
+import com.gm.mcayambe.core.model.Car;
+import com.gm.mcayambe.core.service.CarService;
+import com.gm.mcayambe.core.util.Utils;
 import org.omnifaces.cdi.ViewScoped;
 import org.omnifaces.util.Faces;
 
@@ -14,7 +15,7 @@ import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 
-import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+import static com.gm.mcayambe.core.util.Utils.addDetailMessage;
 import static com.github.adminfaces.template.util.Assert.has;
 
 /**
@@ -62,7 +63,7 @@ public class CarFormMB implements Serializable {
     public void remove() throws IOException {
         if (has(car) && has(car.getId())) {
             carService.remove(car);
-            addDetailMessage("Car " + car.getModel()
+            Utils.addDetailMessage("Car " + car.getModel()
                     + " removed successfully");
             Faces.getFlash().setKeepMessages(true);
             Faces.redirect("car-list.jsf");
@@ -78,7 +79,7 @@ public class CarFormMB implements Serializable {
             carService.update(car);
             msg = "Car " + car.getModel() + " updated successfully";
         }
-        addDetailMessage(msg);
+        Utils.addDetailMessage(msg);
     }
 
     public void clear() {

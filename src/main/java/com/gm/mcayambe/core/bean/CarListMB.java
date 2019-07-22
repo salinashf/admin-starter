@@ -1,9 +1,10 @@
-package com.github.adminfaces.starter.bean;
+package com.gm.mcayambe.core.bean;
 
-import com.github.adminfaces.starter.infra.model.Filter;
-import com.github.adminfaces.starter.model.Car;
-import com.github.adminfaces.starter.service.CarService;
+import com.gm.mcayambe.core.infra.model.Filter;
+import com.gm.mcayambe.core.model.Car;
+import com.gm.mcayambe.core.service.CarService;
 import com.github.adminfaces.template.exception.BusinessException;
+import com.gm.mcayambe.core.util.Utils;
 import org.omnifaces.cdi.ViewScoped;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortOrder;
@@ -15,7 +16,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+import static com.gm.mcayambe.core.util.Utils.addDetailMessage;
 
 /**
  * Created by rmpestano on 12/02/17.
@@ -44,11 +45,11 @@ public class CarListMB implements Serializable {
             public List<Car> load(int first, int pageSize,
                                   String sortField, SortOrder sortOrder,
                                   Map<String, Object> filters) {
-                com.github.adminfaces.starter.infra.model.SortOrder order = null;
+                com.gm.mcayambe.core.infra.model.SortOrder order = null;
                 if (sortOrder != null) {
-                    order = sortOrder.equals(SortOrder.ASCENDING) ? com.github.adminfaces.starter.infra.model.SortOrder.ASCENDING
-                            : sortOrder.equals(SortOrder.DESCENDING) ? com.github.adminfaces.starter.infra.model.SortOrder.DESCENDING
-                            : com.github.adminfaces.starter.infra.model.SortOrder.UNSORTED;
+                    order = sortOrder.equals(SortOrder.ASCENDING) ? com.gm.mcayambe.core.infra.model.SortOrder.ASCENDING
+                            : sortOrder.equals(SortOrder.DESCENDING) ? com.gm.mcayambe.core.infra.model.SortOrder.DESCENDING
+                            : com.gm.mcayambe.core.infra.model.SortOrder.UNSORTED;
                 }
                 filter.setFirst(first).setPageSize(pageSize)
                         .setSortField(sortField).setSortOrder(order)
@@ -93,7 +94,7 @@ public class CarListMB implements Serializable {
             carService.remove(selectedCar);
         }
         selectedCars.clear();
-        addDetailMessage(numCars + " cars deleted successfully!");
+        Utils.addDetailMessage(numCars + " cars deleted successfully!");
     }
 
     public List<Car> getSelectedCars() {

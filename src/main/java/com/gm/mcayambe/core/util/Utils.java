@@ -1,6 +1,6 @@
-package com.github.adminfaces.starter.util;
+package com.gm.mcayambe.core.util;
 
-import com.github.adminfaces.starter.model.Car;
+import com.gm.mcayambe.core.model.Car;
 import org.omnifaces.util.Messages;
 
 import javax.annotation.PostConstruct;

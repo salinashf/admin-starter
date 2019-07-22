@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.adminfaces.starter.service;
+package com.gm.mcayambe.core.service;
 
-import com.github.adminfaces.starter.infra.model.Filter;
-import com.github.adminfaces.starter.infra.model.SortOrder;
-import com.github.adminfaces.starter.model.Car;
+import com.gm.mcayambe.core.infra.model.Filter;
+import com.gm.mcayambe.core.infra.model.SortOrder;
+import com.gm.mcayambe.core.model.Car;
 import com.github.adminfaces.template.exception.BusinessException;
 
 import javax.ejb.Stateless;

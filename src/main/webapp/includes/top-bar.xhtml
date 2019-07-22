@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:pe="http://primefaces.org/ui/extensions">
@@ -15,6 +16,14 @@
 
     </style>
     <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <h:form prependId="false">
+                <p:selectOneMenu value="#{language.localeCode}" onchange="submit()"
+                                 valueChangeListener="#{language.countryLocaleCodeChanged}">
+                    <f:selectItems value="#{language.countriesInMap}" />
+                </p:selectOneMenu>
+            </h:form>
+        </li>
         <li class="hidden-xs">
             <h:form prependId="false">
                 <p:menuButton value="Layout" style="margin:10px 10px 0 0 " id="layout-menu">

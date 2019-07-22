@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter.infra.converter;
+package com.gm.mcayambe.core.infra.converter;
 
 
 import javax.faces.component.UIComponent;

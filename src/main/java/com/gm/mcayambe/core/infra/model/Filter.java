@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter.infra.model;
+package com.gm.mcayambe.core.infra.model;
 
 
 import java.io.Serializable;
