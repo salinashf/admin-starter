@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 import static com.gm.mcayambe.core.util.Utils.addDetailMessage;
 import com.github.adminfaces.template.config.AdminConfig;
+import org.omnifaces.util.Messages;
+
 import javax.inject.Inject;
 
 /**
@@ -33,6 +35,14 @@ public class LogonMB extends AdminSession implements Serializable {
     private String email;
     private String password;
     private boolean remember;
+
+    public String doLogon() {
+        Faces.getFlash().setKeepMessages(true);
+        Messages.addGlobalInfo("Logged in successfully!");
+        return "/index.xhtml?faces-redirect=true";
+    }
+
+
     @Inject
     private AdminConfig adminConfig;
 
