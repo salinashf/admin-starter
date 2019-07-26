@@ -121,7 +121,7 @@
         </configuration>
       </plugin>
     </plugins>
-    <finalName>SIC</finalName>
+    <finalName>SIM</finalName>
   </build>
   <profiles>
     <profile>

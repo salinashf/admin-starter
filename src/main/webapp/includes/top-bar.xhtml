@@ -16,18 +16,6 @@
 
     </style>
     <ul class="nav navbar-nav">
-
-
-        <li class="dropdown">
-            <h:form prependId="false">
-                <p:selectOneMenu value="#{language.localeCode}" onchange="submit()"
-                                 valueChangeListener="#{language.countryLocaleCodeChanged}">
-                    <f:selectItems value="#{language.countriesInMap}" />
-                </p:selectOneMenu>
-            </h:form>
-        </li>
-        -
-
         <li class="hidden-xs">
             <h:form prependId="false">
                 <p:menuButton value="Layout" style="margin:10px 10px 0 0 " id="layout-menu">
@@ -52,7 +40,20 @@
                         #{logonMB.currentUser}
                         <small>Subtitle</small>
                     </p>
+
                 </li>
+
+
+                <li class="user-panel">
+                    <h:form prependId="false">
+                        <p:selectOneMenu value="#{logonMB.localeCode}"
+                                         onchange="submit()"
+                                         valueChangeListener="#{logonMB.countryLocaleCodeChanged}">
+                            <f:selectItems value="#{logonMB.countriesInMap}" />
+                        </p:selectOneMenu>
+                    </h:form>
+                </li>
+
                 <li class="user-footer">
                     <h:form prependId="false">
                         <div class="pull-left">
@@ -70,7 +71,5 @@
         <li>
             <a id="layout-setup" href="#" class="#{adminConfig.controlSidebar.showOnMobile ? '':'hidden-sm hidden-xs'}" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
         </li>
-
     </ul>
-
 </ui:composition>

@@ -20,7 +20,7 @@
     ],
     "theme_color": "#3c8dbc",
     "background_color": "#ffffff",
-    "scope": "/sic/",
-    "start_url": "/sic/index.xhtml",
+    "scope": "/sim/",
+    "start_url": "/sim/index.xhtml",
     "display": "standalone"
 }

@@ -3,12 +3,20 @@ package com.gm.mcayambe.core.infra.security;
 import com.github.adminfaces.template.session.AdminSession;
 import org.omnifaces.util.Faces;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Specializes;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ValueChangeEvent;
 import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
-
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.stream.IntStream;
+import javax.faces.bean.ManagedBean;
 import static com.gm.mcayambe.core.util.Utils.addDetailMessage;
 import com.github.adminfaces.template.config.AdminConfig;
 import org.omnifaces.util.Messages;
@@ -29,13 +37,41 @@ import javax.inject.Inject;
 @Named
 @SessionScoped
 @Specializes
+@ManagedBean
 public class LogonMB extends AdminSession implements Serializable {
 
     private String currentUser;
     private String email;
     private String password;
     private boolean remember;
+    private String localeCode;
+    private Map<String,Object> countries;
 
+    public Map<String, Object> getCountriesInMap() {
+        return countries;
+    }
+    public String getLocaleCode() {
+        return localeCode;
+    }
+    public void setLocaleCode(String localeCode) {
+        this.localeCode = localeCode;
+    }
+    public void countryLocaleCodeChanged(ValueChangeEvent e){
+        String newLocaleValue = e.getNewValue().toString();
+        for (Map.Entry<String, Object> entry : countries.entrySet()) {
+            if(entry.getValue().toString().equals(newLocaleValue)){
+                FacesContext.getCurrentInstance().getViewRoot().setLocale((Locale)entry.getValue());
+            }
+        }
+    }
+
+    @PostConstruct
+    public void init() {
+        countries = new LinkedHashMap<String,Object>();
+        countries.put("English", new Locale("en", "US"));
+        countries.put("Espanol EC", new Locale("es", "EC"));
+        countries.put("Espanol MX", new Locale("es", "EC"));
+    }
     public String doLogon() {
         Faces.getFlash().setKeepMessages(true);
         Messages.addGlobalInfo("Logged in successfully!");

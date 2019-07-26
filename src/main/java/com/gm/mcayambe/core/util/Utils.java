@@ -11,26 +11,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
-
-/**
- * Created by rmpestano on 07/02/17.
- */
 @ApplicationScoped
 public class Utils implements Serializable {
 
-    private List<Car> cars;
 
-
-    @PostConstruct
-    public void init() {
-        cars = new ArrayList<>();
-        IntStream.rangeClosed(1, 50)
-                .forEach(i -> cars.add(create(i)));
-    }
-
-    private static Car create(int i) {
-        return new Car(i).model("model " + i).name("name" + i).price(Double.valueOf(i));
-    }
 
     public static void addDetailMessage(String message) {
         addDetailMessage(message, null);
@@ -45,9 +29,7 @@ public class Utils implements Serializable {
         Messages.add(null, facesMessage);
     }
 
-    @Produces
-    public List<Car> getCars() {
-        return cars;
-    }
+
+
 
 }
