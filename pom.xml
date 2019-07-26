@@ -5,16 +5,13 @@
   <artifactId>sim</artifactId>
   <version>0.1</version>
   <packaging>war</packaging>
-<!--
   <parent>
     <groupId>com.gm.sim</groupId>
     <artifactId>sim-core</artifactId>
     <version>1</version>
-    <relativePath/>
   </parent>
--->
   <name>SIM</name>
-  <url>https://github.com/adminfaces/admin-theme</url>
+  <url>http://geniosdelmal.com</url>
   <description>
         A PrimeFaces theme based on Bootstrap and AdminLTE.
     </description>
@@ -133,21 +130,23 @@
         <version.wildfly-swarm>2018.3.3</version.wildfly-swarm>
       </properties>
       <dependencies>
-        <!--                <dependency>
-                    <groupId>org.wildfly.swarm</groupId>
-                    <artifactId>jsf</artifactId>
-                    <version>${version.wildfly-swarm}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.wildfly.swarm</groupId>
-                    <artifactId>cdi</artifactId>
-                    <version>${version.wildfly-swarm}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.wildfly.swarm</groupId>
-                    <artifactId>ejb</artifactId>
-                    <version>${version.wildfly-swarm}</version>
-                </dependency>-->
+<!--                
+      <dependency>
+          <groupId>org.wildfly.swarm</groupId>
+          <artifactId>jsf</artifactId>
+          <version>${version.wildfly-swarm}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.wildfly.swarm</groupId>
+          <artifactId>cdi</artifactId>
+          <version>${version.wildfly-swarm}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.wildfly.swarm</groupId>
+          <artifactId>ejb</artifactId>
+          <version>${version.wildfly-swarm}</version>
+      </dependency>
+-->
         <dependency>
           <groupId>org.omnifaces</groupId>
           <artifactId>omnifaces</artifactId>
@@ -180,22 +179,22 @@
             </configuration>
           </plugin>
 <!--                
-		    <plugin>
-                        <groupId>org.wildfly.swarm</groupId>
-                        <artifactId>wildfly-swarm-plugin</artifactId>
-                        <version>${version.wildfly-swarm}</version>
-                        <executions>
-                            <execution>
-                                <id>package</id>
-                            </execution>
-                            <execution>
-                                <id>start</id>
-                            </execution>
-                            <execution>
-                                <id>stop</id>
-                            </execution>
-                        </executions>
-                    </plugin>
+	    <plugin>
+		<groupId>org.wildfly.swarm</groupId>
+		<artifactId>wildfly-swarm-plugin</artifactId>
+		<version>${version.wildfly-swarm}</version>
+		<executions>
+		    <execution>
+		        <id>package</id>
+		    </execution>
+		    <execution>
+		        <id>start</id>
+		    </execution>
+		    <execution>
+		        <id>stop</id>
+		    </execution>
+		</executions>
+	    </plugin>
 -->
           <plugin>
             <groupId>org.wildfly.plugins</groupId>
